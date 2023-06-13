@@ -8,31 +8,19 @@
 :set mouse=a
 
 call plug#begin('~/.config/nvim/plugged')
-
-" c
-Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
-Plug 'ludwig/split-manpage.vim'
-
-"" PHP Bundle
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
-Plug 'stephpy/vim-php-cs-fixer'
+" telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 
 " typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
-
-" python 
-Plug 'davidhalter/jedi-vim'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'jelera/vim-javascript-syntax' " js 
 
 "" HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gko/vim-coloresque'
 Plug 'tpope/vim-haml'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'sebdah/vim-delve' " go debugger
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
@@ -67,6 +55,12 @@ nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+
+" telescope
+nnoremap <C-p> :Telescope find_files<CR>
+" nnoremap fg :Telescope live_grep<CR>
+" nnoremap fb :Telescope buffers<CR>
+" nnoremap fh :Telescope help_tags<CR>
 
 nmap <F8> :TagbarToggle<CR>
 
@@ -123,3 +117,4 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
