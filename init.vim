@@ -8,6 +8,9 @@
 :set mouse=a
 
 call plug#begin('~/.config/nvim/plugged')
+"copilot
+Plug 'github/copilot.vim'
+
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
