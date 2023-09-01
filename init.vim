@@ -8,8 +8,15 @@
 :set mouse=a
 
 call plug#begin('~/.config/nvim/plugged')
-"copilot
+" copilot
 Plug 'github/copilot.vim'
+
+" haskell
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+Plug 'haskell/stylish-haskell'
+Plug 'dense-analysis/ale'
+Plug 'parsonsmatt/intero-neovim'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -120,4 +127,3 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
-
